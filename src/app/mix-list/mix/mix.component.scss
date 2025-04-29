@@ -1,0 +1,53 @@
+@import "../../../variables.scss";
+
+.container {
+    width: 500px;
+    height: 700px;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-color: $color-primary;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.rank {
+    text-align: right;
+    color: $color-secondary;
+}
+
+.name, .rank, .author {
+    width: 40%;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: $color-on-primary-accent;
+}
+.author {
+    color: $color-secondary;
+}
+
+.substanceAmount {
+    color: $color-secondary;
+}
+
+.productImg {
+    height: 20px;
+    scale: 1.5;
+}
+
+.product, .rank {
+}
+
+
+.cost, .sell, .net-profit {
+}
+

@@ -1,0 +1,26 @@
+<div class="container">
+  <header>
+    <span class="name">{{ mix().name }}</span>
+    <span class="rank">{{ mix().rank }}</span>
+    <span class="author"><strong>Author: </strong>{{ mix().author }}</span>
+  </header>
+
+  <hr class="hr" />
+  <div class="product">
+    <strong>Product: </strong
+    ><img [src]="productImgPath" [alt]="mix().product" class="productImg" />
+    {{mix().product}}
+    <span class="substanceAmount">{{`(${mix().substances.length} substances)`}}</span>
+  </div>
+  <div class="effects">
+    <strong>Effects: </strong>
+    @for (effect of mix().effects; track effect.name; let last = $last) {
+    <span [style.color]="effect.color">{{ effect.name }}</span>
+    @if (!last) {, } }
+  </div>
+  <div class="cost"><strong>cost: </strong>${{ mix().cost }}</div>
+  <div class="sell"><strong>sell: </strong>${{ mix().sell }}</div>
+  <div class="net-profit">
+    <strong>net profit: </strong>${{ mix().sell - mix().cost }}
+  </div>
+</div>

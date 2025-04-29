@@ -1,0 +1,9 @@
+<div class="container">
+  <label>{{ label() }}</label>
+  <ng-content></ng-content>
+  @if(hasError()) {
+  <div class="error-message">
+    {{ errors()[0] }}
+  </div>
+  }
+</div>

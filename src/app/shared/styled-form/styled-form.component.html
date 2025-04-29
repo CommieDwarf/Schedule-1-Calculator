@@ -1,0 +1,10 @@
+<form class="form" [formGroup]="formGroup()" (ngSubmit)="onSubmit()">
+  @if (title) {
+    <h2>Login</h2>
+    <hr />
+  }
+  <ng-content select="app-input-group"/>
+  <div class="error">Incorrect username or password</div>
+  <ng-content select="[appSubmit]"/>
+</form>
+ 

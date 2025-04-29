@@ -1,0 +1,9 @@
+<app-styled-form [formGroup]="loginForm" (formSubmitted)="onSubmit()" title="Login" submitText="Sign in">
+    <app-input-group label="Username" [errors]="getErrors('username')">
+        <input appInput type="text" name="username" placeholder="Enter an username" formControlName="username">
+    </app-input-group>
+    <app-input-group label="Password" [errors]="getErrors('password')">
+        <input appInput type="password" name="password" placeholder="Enter a password" formControlName="password">
+    </app-input-group>
+  <input type="submit" value="Sign in" appSubmit/>
+</app-styled-form>

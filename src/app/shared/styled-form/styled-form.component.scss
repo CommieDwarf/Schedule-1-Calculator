@@ -1,0 +1,44 @@
+@import "../../../variables.scss";
+
+.form {
+  width: 300px;
+  // background-color: $color-on-primary-dark-accent;
+  color: $color-on-primary-dark-accent;
+  background: linear-gradient(
+    -45deg,
+    $color-primary-dark,
+    75%,
+    $color-primary 99%
+  );
+  padding: 10px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  margin: auto;
+  row-gap: 7px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 3px 3px 16px -4px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 3px 3px 16px -4px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 16px -4px rgba(0, 0, 0, 1);
+}
+
+
+.form:hover {
+  border-width: 10px;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+hr {
+  border-bottom: 1px solid $color-on-primary-dark-accent;
+  width: 100%;
+}
+
+:host ::ng-deep .error {
+  height: 20px;
+  color: $color-error-on-primary-dark;
+  font-size: 0.8em;
+}
