@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import {Component, computed, input} from '@angular/core';
 
 @Component({
   selector: 'app-substance',
@@ -9,6 +9,7 @@ import { Component, computed, input } from '@angular/core';
 export class Substance {
 
   name = input.required<string>();
+
   imgFilePath = computed(() => {
     const imgName = this.name().replace(" ", "_");
     return `img/substance/${imgName}_Icon.webp`;

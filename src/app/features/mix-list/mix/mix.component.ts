@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Mix } from '../../shared/mix.model';
+import { Mix } from '@core/models/mix.model';
 
 @Component({
   selector: 'app-mix',

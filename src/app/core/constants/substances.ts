@@ -1,6 +1,5 @@
-import { Substance } from "../substance.model";
-import { EFFECT } from "../effect.model";
-import { SUBSTANCE } from "../substance.model";
+import { EFFECT } from "@core/models/effect.model";
+import { SUBSTANCE } from "@core/models/substance.model";
 
 const list = [
     {

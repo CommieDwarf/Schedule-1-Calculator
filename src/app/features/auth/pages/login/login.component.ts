@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { StyledFormComponent } from '../../shared/styled-form/styled-form.component';
-import { InputGroupComponent } from '../../shared/styled-form/input-group/input-group.component';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputComponent } from '../../shared/styled-form/input/input.component';
-import { SubmitComponent } from '../../shared/styled-form/submit/submit.component';
+import { StyledFormComponent } from '@shared/components/styled-form/styled-form.component';
+import { InputGroupComponent } from '@shared/components/styled-form/input-group/input-group.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { InputComponent } from '@shared/components/styled-form/input/input.component';
+import { SubmitComponent } from '@shared/components/styled-form/submit/submit.component';
 
 @Component({
   selector: 'app-login',

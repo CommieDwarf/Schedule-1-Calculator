@@ -1,4 +1,4 @@
-import { BASE_PRODUCT } from './../shared/Product.model';
+import { BASE_PRODUCT } from '@core/models/Product.model';
 
 
 
@@ -18,7 +18,4 @@ export class Calculator {
 
         }
     }
-
-
-
 }

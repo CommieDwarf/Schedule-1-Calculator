@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DUMMY_MIXES, Mix } from '../shared/mix.model';
+import { DUMMY_MIXES, Mix } from '@core/models/mix.model';
 import { MixComponent } from './mix/mix.component';
 
 @Component({

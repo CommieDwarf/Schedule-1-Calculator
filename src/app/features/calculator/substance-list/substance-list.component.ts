@@ -1,6 +1,6 @@
 import { Substance } from './substance/substance.component';
 import { Component } from '@angular/core';
-import { SUBSTANCES } from '../../shared/substance.model';
+import { SUBSTANCES } from '@core/models/substance.model';
 
 @Component({
   selector: 'app-substance-list',

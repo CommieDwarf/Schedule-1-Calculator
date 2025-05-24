@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { SubstanceList } from './substance-list/substance-list.component';
-import { Calculator } from './calculator.service';
+import {Component} from '@angular/core';
+import {SubstanceList} from './substance-list/substance-list.component';
+import {Calculator} from './calculator.service';
 
 @Component({
   selector: 'app-calculator',
