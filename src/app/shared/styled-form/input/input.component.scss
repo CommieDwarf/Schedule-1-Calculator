@@ -1,16 +1,15 @@
-@import "../../../../variables.scss";
 
-:host {
-  height: 20px;
-  border-radius: 2px;
-  background-color: $color-on-primary-accent;
-  border-top: 2px solid #d1a182;
-  border-left: 2px solid #d1a182;
-  border-right: 2px solid #ffdcc4;
-  border-bottom: 2px solid #ffdcc4;
-  color: $color-primary-dark;
-}
+// :host {
+//   height: 20px;
+//   border-radius: 2px;
+//   background-color: color.$color-on-primary-accent;
+//   border-top: 2px solid #d1a182;
+//   border-left: 2px solid #d1a182;
+//   border-right: 2px solid #ffdcc4;
+//   border-bottom: 2px solid #ffdcc4;
+//   color: olor.$color-primary-dark;
+// }
 
-:host:focus {
-  outline: 1px solid $color-on-primary-dark-accent;
-}
+// :host:focus {
+//   outline: 1px solid color.$color-on-primary-dark-accent;
+// }

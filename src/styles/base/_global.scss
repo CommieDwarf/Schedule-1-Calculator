@@ -1,0 +1,15 @@
+@use "colors";
+
+
+
+
+body {
+  background: linear-gradient(
+      0deg,
+      colors.$bg-gradient-dark,
+      50%,
+      colors.$bg-gradient-light 90%
+  ) no-repeat fixed;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}

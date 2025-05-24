@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+@use "colors";
 
 .container {
     width: 500px;
@@ -6,7 +6,7 @@
     border-radius: 10px;
     padding: 10px;
     color: white;
-    background-color: $color-primary;
+    background-color: colors.$primary;
     font-size: 21px;
     font-family: Arial, Helvetica, sans-serif
 }
@@ -19,7 +19,7 @@ header {
 
 .rank {
     text-align: right;
-    color: $color-secondary;
+    color: colors.$secondary;
 }
 
 .name, .rank, .author {
@@ -29,14 +29,14 @@ header {
 .name {
     font-weight: 600;
     font-size: 1.2em;
-    color: $color-on-primary-accent;
+    color: colors.$on-primary-accent;
 }
 .author {
-    color: $color-secondary;
+    color: colors.$secondary;
 }
 
 .substanceAmount {
-    color: $color-secondary;
+    color: colors.$secondary;
 }
 
 .productImg {

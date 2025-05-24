@@ -1,13 +1,14 @@
-@import "../../variables.scss";
+@use "colors";
+
 
 .container {
     height: 75px;
     width: 100%;
     position: fixed;
     top: 0;
-    border-bottom: 2px solid $color-primary-dark;
-    color: $color-on-primary-dark-accent;
-    background: linear-gradient(-25deg, $color-primary-dark, 65%, $color-primary 99%);
+    border-bottom: 2px solid colors.$primary-dark;
+    color: colors.$on-primary-dark-accent;
+    background: linear-gradient(-25deg, colors.$primary-dark, 65%, colors.$primary 99%);
     padding-left: 40px;
     padding-right: 40px;
     box-sizing: border-box;
@@ -15,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .logo {
