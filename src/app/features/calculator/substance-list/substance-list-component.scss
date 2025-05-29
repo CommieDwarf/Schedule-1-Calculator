@@ -1,5 +1,12 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  column-gap: 2px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-height: 280px;
+  width: 150px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

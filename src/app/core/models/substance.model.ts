@@ -26,10 +26,10 @@ export interface Substance {
   effectReplaceMap: ReplaceEffectMap;
 }
 
-
-
-export const SUBSTANCES = Object.values(SUBSTANCE).map((value) => {
-  return {
-    name: value,
-  };
-});
+export const SUBSTANCES = Object.freeze(
+  Object.values(SUBSTANCE).map((value) => {
+    return {
+      name: value,
+    };
+  }),
+);

@@ -1,0 +1,8 @@
+<app-header #header />
+
+<div [style.height.px]="header.height()"></div>
+
+<main>
+  <router-outlet></router-outlet>
+  {{ headerHeight() }}
+</main>

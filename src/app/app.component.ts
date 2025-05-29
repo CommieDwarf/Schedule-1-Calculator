@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CalculatorComponent } from "./features/calculator/calculator.component";
-import { MixListComponent } from './features/mix-list/mix-list.component';
-import { HeaderComponent } from "./core/components/header/header.component";
-import { LoginComponent } from "./features/auth/pages/login/login.component";
+import { CalculatorComponent } from "@features/calculator/calculator.component";
+import { MixListComponent } from '@features/mix-list/mix-list.component';
+import { HeaderComponent } from "@core/components/header/header.component";
+import { LoginComponent } from "@features/auth/pages/login/login.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CalculatorComponent, MixListComponent, HeaderComponent, HeaderComponent, LoginComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
