@@ -1,8 +1,7 @@
 <app-header #header />
 
-<div [style.height.px]="header.height()"></div>
+<div [style.height.px]="header.height()"></div> // spacer
 
 <main>
   <router-outlet></router-outlet>
-  {{ headerHeight() }}
 </main>

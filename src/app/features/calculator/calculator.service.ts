@@ -1,21 +1,12 @@
 import { BASE_PRODUCT } from '@core/models/Product.model';
 
-
-
 export class Calculator {
+  private _currentRecipe = [];
 
-    private _currentRecipe = [];
+  constructor() {}
 
-
-
-    constructor() {
-
+  addProduct(product: BASE_PRODUCT) {
+    if (this._currentRecipe.length > 0) {
     }
-
-
-    addProduct(product: BASE_PRODUCT) {
-        if (this._currentRecipe.length > 0 ) {
-
-        }
-    }
+  }
 }

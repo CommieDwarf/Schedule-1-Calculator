@@ -16,9 +16,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: 'layout.component.scss',
 })
 export class LayoutComponent implements AfterViewChecked {
-  header = viewChild.required<HeaderComponent>('header');
-  headerHeight = computed(() => this.header().el.nativeElement.offsetHeight);
-
   constructor() {}
 
   ngAfterViewChecked() {}

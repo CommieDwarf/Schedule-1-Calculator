@@ -1,5 +1,10 @@
 <div class="container">
-  @for (substance of substances; track substance.name) {
-    <app-substance [name]="substance.name" />
-  }
+  <ul>
+    @for (substance of substances; track substance.name) {
+      <li>
+        <app-substance [name]="substance.name" />
+      </li>
+    }
+  </ul>
+
 </div>

@@ -2,7 +2,6 @@
 @use "colors";
 
 .container {
-
   height: 75px;
   width: 100%;
   position: fixed;
@@ -57,8 +56,17 @@ li {
   cursor: pointer;
 }
 
-li:hover {
-  filter: brightness(120%);
+
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+a:hover {
+  color: #ffbd50;
+}
 
+.active-link {
+  color: orange;
+}
