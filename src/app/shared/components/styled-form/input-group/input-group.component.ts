@@ -1,11 +1,10 @@
 import { Component, input } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-input-group',
   imports: [],
   templateUrl: './input-group.component.html',
-  styleUrl: './input-group.component.scss'
+  styleUrl: './input-group.component.scss',
 })
 export class InputGroupComponent {
   label = input<string>();

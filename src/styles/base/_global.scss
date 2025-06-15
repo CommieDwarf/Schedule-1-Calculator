@@ -3,7 +3,8 @@
 body {
   background-image: url("/img/background.png");
   background-attachment: fixed;
-  background-position-y: -200px;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
 }
+

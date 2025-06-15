@@ -1,14 +1,19 @@
+
+
 .container {
     width: 120px;
-    height: 30px;
+    height: 32px;
     display: flex;
     align-items: center;
     padding-left: 5px;
-    background-color: #3a5727;
+    background-color: #2a3d25;
     color: white;
     border-radius: 5px;
     font-size: 10px;
     font-weight: 500;
+    cursor: grab;
+    border: 1px solid #192315;
+    box-sizing: border-box;
 }
 
 .img {

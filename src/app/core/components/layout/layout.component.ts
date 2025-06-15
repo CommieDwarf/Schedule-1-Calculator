@@ -1,11 +1,4 @@
-import {
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  computed,
-  signal,
-  viewChild,
-} from '@angular/core';
+import { AfterViewChecked, Component } from '@angular/core';
 import { HeaderComponent } from '@core/components/header/header.component';
 import { RouterOutlet } from '@angular/router';
 

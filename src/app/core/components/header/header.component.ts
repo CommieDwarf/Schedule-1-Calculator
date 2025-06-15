@@ -16,7 +16,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent implements AfterViewInit {
   private container = viewChild<ElementRef<HTMLDivElement>>('container');
 
-  constructor(public el: ElementRef) {}
+  constructor() {}
   private _height = signal(0);
 
   get height() {

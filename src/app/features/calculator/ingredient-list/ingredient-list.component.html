@@ -1,0 +1,21 @@
+<div class="container">
+  <ul cdkDropList
+      [id]="listId()"
+      [cdkDropListConnectedTo]="connectedTo()"
+      (cdkDropListDropped)="onDrop($event)"
+      [cdkDropListData]="ingredients()"
+      [cdkDropListSortingDisabled]="sortingDisabled()"
+      [cdkDropListEnterPredicate]="enterPredicate.bind(this)"
+  >
+    @for (ingredient of ingredients(); track ingredient) {
+      <li cdkDrag
+          (cdkDragStarted)="onDragStarted($event)"
+          (cdkDragEnded)="onDragEnded($event)"
+          (cdkDragEntered)="onDragEntered($event)"
+          [cdkDragData]="ingredient"
+      >
+        <app-ingredient [name]="ingredient.name"/>
+      </li>
+    }
+  </ul>
+</div>

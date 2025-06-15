@@ -64,9 +64,10 @@ a {
 }
 
 a:hover {
-  color: #ffbd50;
+  color: #df7b2b;
+  filter: brightness(150%);
 }
 
 .active-link {
-  color: orange;
+  color: #df7b2b;
 }

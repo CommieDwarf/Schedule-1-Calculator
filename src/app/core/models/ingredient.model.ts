@@ -1,6 +1,6 @@
 import { EFFECT } from './effect.model';
 
-export enum SUBSTANCE {
+export enum INGREDIENT {
   ADDY = 'Addy',
   BANANA = 'Banana',
   BATTERY = 'Battery',
@@ -19,17 +19,7 @@ export enum SUBSTANCE {
   VIAGRA = 'Viagra',
 }
 
-export type ReplaceEffectMap = ReadonlyMap<EFFECT, EFFECT>;
-
-export interface Substance {
-  name: SUBSTANCE;
-  effectReplaceMap: ReplaceEffectMap;
+export interface Ingredient {
+  name: INGREDIENT;
+  replacesEffects: Partial<Record<EFFECT, EFFECT>>;
 }
-
-export const SUBSTANCES = Object.freeze(
-  Object.values(SUBSTANCE).map((value) => {
-    return {
-      name: value,
-    };
-  }),
-);

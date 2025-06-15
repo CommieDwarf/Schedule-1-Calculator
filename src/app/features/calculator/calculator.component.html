@@ -1,3 +1,21 @@
 <div class="container">
-  <app-substance-list />
+  <div class="ingredient-lists">
+    <app-ingredient-list
+      listId="ingredients"
+      connectedTo="mix-list"
+      [ingredients]="baseIngredients"
+      (drop)="onAllIngredientsDrop($event)"
+      [sortingDisabled]="true"
+      [dropDisabled]="baseIngredientsDropDisabled()"
+    />
+    <app-ingredient-list
+      listId="mix-list"
+      connectedTo="ingredients"
+      [ingredients]="currentMix()"
+      (drop)="onIngredientDrop($event)"
+      (dragStarted)="onCurrentMixDragStart()"
+      (dragEnded)="onCurrentMixDragEnd()"
+      [dropDisabled]="currentMix().length === MAX_INGREDIENTS_IN_MIX_AMOUNT"
+    />
+  </div>
 </div>
