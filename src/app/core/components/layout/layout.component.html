@@ -1,7 +1,11 @@
-<app-header #header />
-
-<div [style.height.px]="header.height()"></div> // spacer
-
+<app-header
+  #header
+  (mobileMenuButtonClicked)="toggleMobileMenu()"
+  [mobileMenuOpen]="mobileMenuOpen()"
+/>
+<!--spacer-->
+<div [style.height.px]="header.height()"></div>
+<app-mobile-menu (swipeLeft)="closeMobileMenu()" [isOpen]="mobileMenuOpen()"/>
 <main>
   <router-outlet></router-outlet>
 </main>

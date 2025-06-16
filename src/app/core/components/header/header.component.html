@@ -7,7 +7,17 @@
       <li>Recipes</li>
     </ul>
   </nav>
+  <div
+    [class]="[
+      'mobile-menu-button',
+      mobileMenuOpen() ? 'mobile-menu-button--toggled': '',
+    ]"
+    (click)="onMobileMenuButtonClick()"
+  >
+    <i class="icon-menu-1"></i>
+  </div>
   <img src="img/Site-logo.png" alt="Schedule 1 Calculator" class="logo" />
+  <div class="mobile-header-spacer"></div>
   <nav class="rightNav">
     <ul>
       <li>

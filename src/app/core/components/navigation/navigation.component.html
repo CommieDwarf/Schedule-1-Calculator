@@ -1,0 +1,15 @@
+<nav
+  [ngClass]="{
+    container: true,
+    'container--vertical': orientation() === 'vertical',
+  }"
+>
+  <ul>
+    <li>
+      <a routerLink="/mix" routerLinkActive="active-link">Calculator</a>
+    </li>
+    <li>
+      <a routerLink=""> Recipes </a>
+    </li>
+  </ul>
+</nav>

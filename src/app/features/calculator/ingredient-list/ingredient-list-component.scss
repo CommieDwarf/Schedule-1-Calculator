@@ -1,13 +1,10 @@
-
 @use "abstracts";
 
 .container {
   width: 180px;
   height: calc((32px * 8) + 2px * 7 + 20px);
   border: 1px solid #333;
-  -webkit-box-shadow: inset 0 0 20px #000;
-  //-moz-box-shadow: inset 0px 0px 15px 2px #232323;
-  //box-shadow: inset 0px 0px 15px 2px black;
+  @include abstracts.inner-box-shadow(20px);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,0 +1,18 @@
+<div
+  #container
+  [ngClass]="{
+    container: true,
+    'container--open': isOpen(),
+    'container--touching': isTouching(),
+  }"
+  appSwipe
+  (swipeLeft)="onSwipeLeft()"
+  (touchMoveHorizontally)="onTouchMove($event)"
+  (touchStart)="onTouchStart()"
+  (touchEnd)="onTouchEnd()"
+  [style.transform]=`translateX(${translateX()}px)`
+>
+  <div class="padding-spacer-top"></div>
+  <div class="background"></div>
+  <app-navigation orientation="vertical" />
+</div>

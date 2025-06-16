@@ -1,0 +1,45 @@
+@use "abstracts";
+
+:host {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  :host {
+    display: block;
+  }
+}
+
+.container {
+  width: 150px;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(30, 30, 30, 0.8);
+  border-right: #262626;
+  font-size: 22px;
+  left: 0;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.container--touching {
+    transition-timing-function: linear;
+    transition-duration: 0.05s;
+}
+
+
+.background {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/geometric-background.png");
+  background-size: 400px;
+  background-repeat: repeat;
+  filter: brightness(10%) opacity(25%);
+  pointer-events: none
+}
+
+

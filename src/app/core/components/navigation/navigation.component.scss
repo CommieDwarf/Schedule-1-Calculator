@@ -1,0 +1,41 @@
+
+@use "abstracts";
+
+.container {
+  z-index: 2;
+  position: relative;
+}
+
+.container > ul {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.container--vertical > ul {
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+li {
+  width: 100%;
+}
+
+
+a {
+  text-decoration: none;
+  //color: #759d57;
+  color: #d7d7d7;
+
+  font-family: Bahnschrift;
+  padding: 5px;
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid #262626;
+  background-color:  #151515;
+  width: 100%;
+  @include abstracts.inner-box-shadow(5px);
+}
