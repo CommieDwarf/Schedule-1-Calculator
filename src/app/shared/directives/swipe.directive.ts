@@ -14,54 +14,56 @@ export interface TouchMoveSingleAxisEvent {
   selector: '[appSwipe]',
 })
 export class SwipeDirective {
+  readonly swipeThreshold = input<number>(20);
+  readonly swipedLeft = output();
+  readonly swipedRight = output();
+  readonly swipedUp = output();
+  readonly swipedDown = output();
+  readonly touchMoved = output<TouchEvent>();
+  readonly touchMovedHorizontally = output<TouchMoveSingleAxisEvent>();
+  readonly touchMovedVertically = output<TouchMoveSingleAxisEvent>();
+  readonly touchStarted = output();
+  readonly touchEnded = output();
+
   private touchStartY = 0;
   private touchStartX = 0;
 
-  swipeThreshold = input<number>(20);
-
-  swipeLeft = output();
-  swipeRight = output();
-  swipeUp = output();
-  swipeDown = output();
-  touchMove = output<TouchEvent>();
-  touchMoveHorizontally = output<TouchMoveSingleAxisEvent>();
-  touchMoveVertically = output<TouchMoveSingleAxisEvent>();
-  touchStart = output();
-  touchEnd = output();
-
-  @HostListener('touchmove', ['$event']) onTouchMove(event: TouchEvent) {
-    this.touchMoveHorizontally.emit({
+  @HostListener('touchmove', ['$event'])
+  protected onTouchMove(event: TouchEvent) {
+    this.touchMovedHorizontally.emit({
       delta: this.touchStartX - event.changedTouches[0].screenX,
     });
-    this.touchMoveVertically.emit({
+    this.touchMovedVertically.emit({
       delta: this.touchStartY - event.changedTouches[0].screenY,
     });
-    this.touchMove.emit(event);
+    this.touchMoved.emit(event);
   }
 
-  @HostListener('touchstart', ['$event']) onTouchStart(event: TouchEvent) {
+  @HostListener('touchstart', ['$event'])
+  protected onTouchStart(event: TouchEvent) {
     this.touchStartX = event.changedTouches.item(0)?.screenX ?? 0;
     this.touchStartY = event.changedTouches.item(0)?.screenY ?? 0;
-    this.touchStart.emit();
+    this.touchStarted.emit();
   }
 
   @HostListener('touchend', ['$event'])
-  onTouchEnd(event: TouchEvent) {
+  protected onTouchEnd(event: TouchEvent) {
     const touch = event.changedTouches[0];
+    if (!touch) return;
     this.detectDirection({
       start: this.touchStartX,
       end: touch.screenX,
-      emitNegative: this.swipeLeft,
-      emitPositive: this.swipeRight,
+      emitNegative: this.swipedLeft,
+      emitPositive: this.swipedRight,
     });
     this.detectDirection({
       start: this.touchStartY,
       end: touch.screenY,
-      emitNegative: this.swipeUp,
-      emitPositive: this.swipeDown,
+      emitNegative: this.swipedUp,
+      emitPositive: this.swipedDown,
     });
     this.resetSwipeStart();
-    this.touchEnd.emit();
+    this.touchEnded.emit();
   }
 
   private resetSwipeStart() {

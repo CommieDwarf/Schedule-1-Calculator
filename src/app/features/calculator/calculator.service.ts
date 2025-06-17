@@ -6,21 +6,17 @@ import { transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Injectable()
 export class CalculatorService {
-  private _ingredientList = signal<Ingredient[]>([]);
-
-  get ingredientList() {
-    return this._ingredientList;
-  }
+  public readonly ingredientList = signal<Ingredient[]>([]);
 
   constructor() {}
 
-  addProduct(product: BASE_PRODUCT) {}
+  public addProduct(product: BASE_PRODUCT) {}
 
-  addIngredient(ingredient: Ingredient, index: number) {
-    if (this._ingredientList().length >= MAX_INGREDIENTS_IN_MIX_AMOUNT) {
+  public addIngredient(ingredient: Ingredient, index: number): void {
+    if (this.ingredientList().length >= MAX_INGREDIENTS_IN_MIX_AMOUNT) {
       return;
     }
-    this._ingredientList.update((prev) => {
+    this.ingredientList.update((prev) => {
       return [
         ...prev.slice(0, index),
         { ...ingredient },
@@ -29,21 +25,21 @@ export class CalculatorService {
     });
   }
 
-  changeIngredientOrder(prevIndex: number, currentIndex: number) {
-    this._ingredientList.update((prev) => {
+  public reorderIngredient(prevIndex: number, currentIndex: number): void {
+    this.ingredientList.update((prev) => {
       const newList = [...prev];
       transferArrayItem(newList, newList, prevIndex, currentIndex);
       return newList;
     });
   }
 
-  removeIngredient(ingredient: Ingredient) {
-    this._ingredientList.update((prev) =>
+  public removeIngredient(ingredient: Ingredient): void {
+    this.ingredientList.update((prev) =>
       prev.filter((ing) => ing !== ingredient),
     );
   }
 
-  resetIngredientList() {
-    this._ingredientList.set([]);
+  public resetIngredientList(): void {
+    this.ingredientList.set([]);
   }
 }

@@ -8,11 +8,9 @@
     </ul>
   </nav>
   <div
-    [class]="[
-      'mobile-menu-button',
-      mobileMenuOpen() ? 'mobile-menu-button--toggled': '',
-    ]"
-    (click)="onMobileMenuButtonClick()"
+    [class.mobile-menu-button]="true"
+    [class.mobile-menu-button--toggled]="isMobileMenuOpen()"
+    (click)="requestMobileMenuToggle()"
   >
     <i class="icon-menu-1"></i>
   </div>

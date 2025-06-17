@@ -8,7 +8,6 @@ import {
   viewChild,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -17,23 +16,24 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements AfterViewInit {
-  private container = viewChild<ElementRef<HTMLDivElement>>('container');
-  constructor() {}
+  isMobileMenuOpen = input(false);
+  toggleMobileMenu = output();
   private _height = signal(0);
-  mobileMenuOpen = input(false);
-  mobileMenuButtonClicked = output();
+  private container = viewChild<ElementRef<HTMLDivElement>>('container');
+
+  constructor() {}
 
   get height() {
     return this._height;
-  }
-
-  onMobileMenuButtonClick() {
-    this.mobileMenuButtonClicked.emit();
   }
 
   ngAfterViewInit() {
     this._height.set(
       this.container()?.nativeElement.getBoundingClientRect().height || 0,
     );
+  }
+
+  protected requestMobileMenuToggle() {
+    this.toggleMobileMenu.emit();
   }
 }

@@ -13,31 +13,30 @@ import { Ingredient as IngredientModel } from '@core/models/ingredient.model';
   styleUrl: './recipe-builder.component.scss',
 })
 export class RecipeBuilderComponent {
-  private calculatorService = inject(CalculatorService);
-  readonly baseIngredients = inject(INGREDIENTS_TOKEN);
+  private readonly calculatorService = inject(CalculatorService);
+  protected readonly sourceIngredients = inject(INGREDIENTS_TOKEN);
+  protected readonly mixedIngredients = this.calculatorService.ingredientList;
+  protected readonly sourceDragDisabled = signal(false);
 
-  readonly currentMix = this.calculatorService.ingredientList;
-
-  baseIngredientsDropDisabled = signal(false);
+  protected readonly MAX_INGREDIENTS_IN_MIX_AMOUNT =
+    MAX_INGREDIENTS_IN_MIX_AMOUNT;
 
   constructor() {}
 
-  onCurrentMixDragStart() {
-    this.baseIngredientsDropDisabled.set(true);
-    console.log('Start');
+  protected disableSourceDrag() {
+    this.sourceDragDisabled.set(true);
   }
 
-  onCurrentMixDragEnd() {
-    this.baseIngredientsDropDisabled.set(false);
+  protected enableSourceDrag() {
+    this.sourceDragDisabled.set(false);
   }
 
-  onIngredientDrop(event: CdkDragDrop<IngredientModel[]>) {
-    console.log('DROP');
+  protected onIngredientDrop(event: CdkDragDrop<IngredientModel[]>) {
     const ingredient = event.previousContainer.data[event.previousIndex];
     if (!event.isPointerOverContainer) {
       this.calculatorService.removeIngredient(ingredient);
     } else if (event.previousContainer.id === event.container.id) {
-      this.calculatorService.changeIngredientOrder(
+      this.calculatorService.reorderIngredient(
         event.previousIndex,
         event.currentIndex,
       );
@@ -46,14 +45,11 @@ export class RecipeBuilderComponent {
     }
   }
 
-  onAllIngredientsDrop(event: CdkDragDrop<IngredientModel[]>) {
+  protected removeFromCurrentMix(event: CdkDragDrop<IngredientModel[]>) {
     if (event.container !== event.previousContainer) {
       this.calculatorService.removeIngredient(
         event.previousContainer.data[event.previousIndex],
       );
     }
   }
-
-  protected readonly MAX_INGREDIENTS_IN_MIX_AMOUNT =
-    MAX_INGREDIENTS_IN_MIX_AMOUNT;
 }

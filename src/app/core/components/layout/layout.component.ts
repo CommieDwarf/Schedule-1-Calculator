@@ -1,30 +1,27 @@
-import { AfterViewChecked, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { HeaderComponent } from '@core/components/header/header.component';
 import { RouterOutlet } from '@angular/router';
 import { MobileMenuComponent } from '@core/components/mobile-menu/mobile-menu.component';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [HeaderComponent, MobileMenuComponent],
+  imports: [HeaderComponent, MobileMenuComponent, RouterOutlet],
   templateUrl: './layout.component.html',
   styleUrl: 'layout.component.scss',
 })
-export class LayoutComponent implements AfterViewChecked {
-  mobileMenuOpen = signal<boolean>(false);
+export class LayoutComponent {
+  readonly isMobileMenuOpen = signal<boolean>(false);
 
   constructor() {}
 
-  openMobileMenu() {
-    this.mobileMenuOpen.set(true);
+  protected openMobileMenu() {
+    this.isMobileMenuOpen.set(true);
   }
-  closeMobileMenu() {
-    this.mobileMenuOpen.set(false);
-  }
-
-  toggleMobileMenu() {
-    this.mobileMenuOpen.update((prev) => !prev);
+  protected closeMobileMenu() {
+    this.isMobileMenuOpen.set(false);
   }
 
-  ngAfterViewChecked() {}
+  protected toggleMobileMenu() {
+    this.isMobileMenuOpen.update((prev) => !prev);
+  }
 }

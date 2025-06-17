@@ -5,17 +5,16 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
   selector: 'app-styled-form',
   imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './styled-form.component.html',
-  styleUrl: './styled-form.component.scss'
+  styleUrl: './styled-form.component.scss',
 })
 export class StyledFormComponent {
-  formGroup = input.required<FormGroup>();
-  submitText = input('Submit');
-  isLoading = input(false);
-  title = output<string>();
-  formSubmitted = output<void>();
+  readonly formGroup = input.required<FormGroup>();
+  readonly submitText = input('Submit');
+  readonly isLoading = input(false);
+  readonly title = output<string>();
+  readonly formSubmitted = output<void>();
 
   onSubmit() {
     this.formSubmitted.emit();
-  
   }
 }

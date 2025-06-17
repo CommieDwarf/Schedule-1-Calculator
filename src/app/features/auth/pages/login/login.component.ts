@@ -7,12 +7,17 @@ import { SubmitComponent } from '@shared/components/styled-form/submit/submit.co
 
 @Component({
   selector: 'app-login',
-  imports: [StyledFormComponent, InputGroupComponent, InputComponent, SubmitComponent],
+  imports: [
+    StyledFormComponent,
+    InputGroupComponent,
+    InputComponent,
+    SubmitComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  loginForm = new FormGroup({
+  readonly loginForm = new FormGroup({
     username: new FormControl('', [
       Validators.required,
       Validators.max(16),
@@ -27,10 +32,8 @@ export class LoginComponent {
 
   onSubmit() {}
 
-  getErrors(controlName: string) {
+  getErrors(controlName: string): string[] {
     const control = this.loginForm.get(controlName);
-    console.log(control?.errors);
-    console.log(control?.touched);
     if (!control || !control.errors || !control.touched) return [];
     return Object.keys(control.errors).map((errorKey) => {
       switch (errorKey) {

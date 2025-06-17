@@ -18,36 +18,36 @@ import { Ingredient } from '@features/calculator/ingredient-list/ingredient/ingr
 })
 export class IngredientList {
   readonly ingredients = input.required<IngredientModel[]>();
-  listId = input<string>('');
-  connectedTo = input<string>('');
-  sortingDisabled = input<boolean>(false);
-  dropDisabled = input<boolean>(false);
-  dragStarted = output<CdkDragStart>();
-  dragEnded = output<CdkDragEnd>();
-  dragEntered = output<IngredientModel>();
+  readonly listId = input<string>('');
+  readonly connectedTo = input<string>('');
+  readonly sortingDisabled = input<boolean>(false);
+  readonly dropDisabled = input<boolean>(false);
+  readonly dragStarted = output<CdkDragStart>();
+  readonly dragEnded = output<CdkDragEnd>();
+  readonly dragEntered = output<IngredientModel>();
 
-  drop = output<CdkDragDrop<IngredientModel[]>>();
+  readonly drop = output<CdkDragDrop<IngredientModel[]>>();
 
   constructor() {}
 
-  onDrop(event: CdkDragDrop<IngredientModel[]>) {
+  protected emitDrop(event: CdkDragDrop<IngredientModel[]>) {
     this.drop.emit(event);
   }
 
-  onDragStarted(event: CdkDragStart) {
+  protected onDragStarted(event: CdkDragStart) {
     document.body.classList.add('dragging');
     this.dragStarted.emit(event);
   }
-  onDragEnded(event: CdkDragEnd) {
+  protected onDragEnded(event: CdkDragEnd) {
     document.body.classList.remove('dragging');
     this.dragEnded.emit(event);
   }
 
-  onDragEntered(event: CdkDragEnter<IngredientModel>) {
+  protected emitDragEntered(event: CdkDragEnter<IngredientModel>) {
     this.dragEntered.emit(event.item.data);
   }
 
-  enterPredicate() {
+  protected enterPredicate() {
     return !this.dropDisabled();
   }
 }

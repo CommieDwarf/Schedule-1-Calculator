@@ -6,9 +6,9 @@ import { Component, computed, input } from '@angular/core';
   styleUrl: './ingredient.component.scss',
 })
 export class Ingredient {
-  name = input.required<string>();
+  readonly name = input.required<string>();
 
-  imgFilePath = computed(() => {
+  protected readonly imgFilePath = computed(() => {
     const imgName = this.name().replace(' ', '_');
     return `img/ingredient/${imgName}_Icon.webp`;
   });

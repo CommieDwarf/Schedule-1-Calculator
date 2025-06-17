@@ -2,7 +2,7 @@
   <ul cdkDropList
       [id]="listId()"
       [cdkDropListConnectedTo]="connectedTo()"
-      (cdkDropListDropped)="onDrop($event)"
+      (cdkDropListDropped)="emitDrop($event)"
       [cdkDropListData]="ingredients()"
       [cdkDropListSortingDisabled]="sortingDisabled()"
       [cdkDropListEnterPredicate]="enterPredicate.bind(this)"
@@ -11,7 +11,7 @@
       <li cdkDrag
           (cdkDragStarted)="onDragStarted($event)"
           (cdkDragEnded)="onDragEnded($event)"
-          (cdkDragEntered)="onDragEntered($event)"
+          (cdkDragEntered)="emitDragEntered($event)"
           [cdkDragData]="ingredient"
       >
         <app-ingredient [name]="ingredient.name"/>

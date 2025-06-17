@@ -1,15 +1,13 @@
 <div
   #container
-  [ngClass]="{
-    container: true,
-    'container--open': isOpen(),
-    'container--touching': isTouching(),
-  }"
+  [class.container]="true"
+  [class.container--open]="isOpen()"
+  [class.container--touching]="isTouching()"
   appSwipe
-  (swipeLeft)="onSwipeLeft()"
-  (touchMoveHorizontally)="onTouchMove($event)"
-  (touchStart)="onTouchStart()"
-  (touchEnd)="onTouchEnd()"
+  (swipedLeft)="requestClose()"
+  (touchMovedHorizontally)="updateTouchDelta($event)"
+  (touchStarted)="startTouch()"
+  (touchEnded)="endTouch()"
   [style.transform]=`translateX(${translateX()}px)`
 >
   <div class="padding-spacer-top"></div>
