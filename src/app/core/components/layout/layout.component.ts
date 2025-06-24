@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { HeaderComponent } from '@core/components/header/header.component';
-import { RouterOutlet } from '@angular/router';
 import { MobileMenuComponent } from '@core/components/mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-layout',
-  imports: [HeaderComponent, MobileMenuComponent, RouterOutlet],
+  imports: [HeaderComponent, MobileMenuComponent],
   templateUrl: './layout.component.html',
   styleUrl: 'layout.component.scss',
 })

@@ -7,9 +7,8 @@
 <div [style.height.px]="header.height()"></div>
 
 <app-mobile-menu
-  (close)="closeMobileMenu()"
-  [isOpen]="isMobileMenuOpen()"
+  [(isOpen)]="isMobileMenuOpen"
 />
 <main>
-  <router-outlet></router-outlet>
+<!--  <router-outlet></router-outlet>-->
 </main>

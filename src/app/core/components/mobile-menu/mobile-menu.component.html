@@ -1,16 +1,12 @@
 <div
   #container
   [class.container]="true"
-  [class.container--open]="isOpen()"
-  [class.container--touching]="isTouching()"
-  appSwipe
-  (swipedLeft)="requestClose()"
-  (touchMovedHorizontally)="updateTouchDelta($event)"
-  (touchStarted)="startTouch()"
-  (touchEnded)="endTouch()"
-  [style.transform]=`translateX(${translateX()}px)`
+  appSideDrawer
+  [(isOpen)]="isOpen"
+  side="left"
 >
   <div class="padding-spacer-top"></div>
   <div class="background"></div>
   <app-navigation orientation="vertical" />
 </div>
+

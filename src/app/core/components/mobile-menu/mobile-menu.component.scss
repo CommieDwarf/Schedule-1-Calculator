@@ -13,18 +13,10 @@
 .container {
   width: 150px;
   height: 100%;
-  position: fixed;
   background-color: rgba(30, 30, 30, 0.8);
   border-right: #262626;
   font-size: 22px;
-  left: 0;
-  transition: transform 0.3s ease;
   will-change: transform;
-}
-
-.container--touching {
-    transition-timing-function: linear;
-    transition-duration: 0.05s;
 }
 
 .background {
