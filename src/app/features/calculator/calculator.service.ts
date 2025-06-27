@@ -80,12 +80,14 @@ export class CalculatorService {
     this.sellPrice.set(this.calcPrice(baseProduct, this.effects()));
   }
 
+  private calcCost(ingredients: Ingredient[]) {}
+
   private calcPrice(baseProduct: BaseProduct, effects: Effect[]): number {
     const totalMultiplier = effects
       .map((effect) => effect.multiplier)
       .reduce((acc, multiplier) => acc + multiplier);
 
-    return baseProduct.basePrice * (1 + totalMultiplier);
+    return Math.round(baseProduct.basePrice * (1 + totalMultiplier));
   }
 
   private calcEffects(
@@ -124,7 +126,7 @@ export class CalculatorService {
   private getIngredient(ingredient: INGREDIENT) {
     const ing = this.INGREDIENTS_MAP.get(ingredient);
     if (!ing) {
-      throw new Error(`${effect} is missing in INREDIENTS_MAP`);
+      throw new Error(`${effect} is missing in INGREDIENTS_MAP`);
     }
     return ing;
   }

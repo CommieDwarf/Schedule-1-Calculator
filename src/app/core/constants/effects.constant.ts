@@ -1,6 +1,6 @@
 import { EFFECT, Effect } from '@core/models/effect.model';
 
-export const EFFECTS = {
+export const EFFECTS: Record<EFFECT, Effect> = {
   [EFFECT.ANTI_GRAVITY]: {
     name: EFFECT.ANTI_GRAVITY,
     multiplier: 0.54,

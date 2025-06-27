@@ -1,7 +1,7 @@
 import { EFFECT } from '@core/models/effect.model';
 import { Ingredient, INGREDIENT } from '@core/models/ingredient.model';
 
-const ingredients = {
+const ingredients: Record<INGREDIENT, Ingredient> = {
   [INGREDIENT.ADDY]: {
     name: INGREDIENT.ADDY,
     baseEffect: EFFECT.THOUGHT_PROVOKING,
@@ -12,10 +12,12 @@ const ingredients = {
       [EFFECT.LONG_FACED]: EFFECT.ELECTRIFYING,
       [EFFECT.SEDATING]: EFFECT.GINGERITIS,
     },
+    cost: 9,
   },
   [INGREDIENT.BANANA]: {
     name: INGREDIENT.BANANA,
     baseEffect: EFFECT.GINGERITIS,
+    cost: 2,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.SNEAKY,
       [EFFECT.CYCLOPEAN]: EFFECT.ENERGIZING,
@@ -31,6 +33,7 @@ const ingredients = {
   [INGREDIENT.BATTERY]: {
     name: INGREDIENT.BATTERY,
     baseEffect: EFFECT.BRIGHT_EYED,
+    cost: 8,
     replacesEffects: {
       [EFFECT.CYCLOPEAN]: EFFECT.GLOWING,
       [EFFECT.ELECTRIFYING]: EFFECT.EUPHORIC,
@@ -43,6 +46,7 @@ const ingredients = {
   [INGREDIENT.CHILI]: {
     name: INGREDIENT.CHILI,
     baseEffect: EFFECT.SPICY,
+    cost: 7,
     replacesEffects: {
       [EFFECT.ANTI_GRAVITY]: EFFECT.TROPIC_THUNDER,
       [EFFECT.ATHLETIC]: EFFECT.EUPHORIC,
@@ -56,6 +60,7 @@ const ingredients = {
   [INGREDIENT.CUKE]: {
     name: INGREDIENT.CUKE,
     baseEffect: EFFECT.ENERGIZING,
+    cost: 2,
     replacesEffects: {
       [EFFECT.EUPHORIC]: EFFECT.LAXATIVE,
       [EFFECT.FOGGY]: EFFECT.CYCLOPEAN,
@@ -69,6 +74,7 @@ const ingredients = {
   [INGREDIENT.DONUT]: {
     name: INGREDIENT.DONUT,
     baseEffect: EFFECT.CALORIE_DENSE,
+    cost: 3,
     replacesEffects: {
       [EFFECT.ANTI_GRAVITY]: EFFECT.SLIPPERY,
       [EFFECT.BALDING]: EFFECT.SNEAKY,
@@ -82,6 +88,7 @@ const ingredients = {
   [INGREDIENT.ENERGY_DRINK]: {
     name: INGREDIENT.ENERGY_DRINK,
     baseEffect: EFFECT.ATHLETIC,
+    cost: 6,
     replacesEffects: {
       [EFFECT.DISORIENTING]: EFFECT.ELECTRIFYING,
       [EFFECT.EUPHORIC]: EFFECT.ENERGIZING,
@@ -97,6 +104,7 @@ const ingredients = {
   [INGREDIENT.FLU_MEDICINE]: {
     name: INGREDIENT.FLU_MEDICINE,
     baseEffect: EFFECT.SEDATING,
+    cost: 5,
     replacesEffects: {
       [EFFECT.ATHLETIC]: EFFECT.MUNCHIES,
       [EFFECT.CALMING]: EFFECT.BRIGHT_EYED,
@@ -113,6 +121,7 @@ const ingredients = {
   [INGREDIENT.GASOLINE]: {
     name: INGREDIENT.GASOLINE,
     baseEffect: EFFECT.TOXIC,
+    cost: 6,
     replacesEffects: {
       [EFFECT.DISORIENTING]: EFFECT.GLOWING,
       [EFFECT.ELECTRIFYING]: EFFECT.DISORIENTING,
@@ -130,6 +139,7 @@ const ingredients = {
   [INGREDIENT.HORSE_SEMEN]: {
     name: INGREDIENT.HORSE_SEMEN,
     baseEffect: EFFECT.LONG_FACED,
+    cost: 9,
     replacesEffects: {
       [EFFECT.ANTI_GRAVITY]: EFFECT.CALMING,
       [EFFECT.GINGERITIS]: EFFECT.REFRESHING,
@@ -140,6 +150,7 @@ const ingredients = {
   [INGREDIENT.IODINE]: {
     name: INGREDIENT.IODINE,
     baseEffect: EFFECT.JENNERISING,
+    cost: 8,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.BALDING,
       [EFFECT.CALORIE_DENSE]: EFFECT.GINGERITIS,
@@ -152,6 +163,7 @@ const ingredients = {
   [INGREDIENT.MEGA_BEAN]: {
     name: INGREDIENT.MEGA_BEAN,
     baseEffect: EFFECT.FOGGY,
+    cost: 7,
     replacesEffects: {
       [EFFECT.ATHLETIC]: EFFECT.LAXATIVE,
       [EFFECT.CALMING]: EFFECT.GLOWING,
@@ -168,6 +180,7 @@ const ingredients = {
   [INGREDIENT.MOTOR_OIL]: {
     name: INGREDIENT.MOTOR_OIL,
     baseEffect: EFFECT.SLIPPERY,
+    cost: 6,
     replacesEffects: {
       [EFFECT.ENERGIZING]: EFFECT.MUNCHIES,
       [EFFECT.EUPHORIC]: EFFECT.SEDATING,
@@ -179,6 +192,7 @@ const ingredients = {
   [INGREDIENT.MOUTH_WASH]: {
     name: INGREDIENT.MOUTH_WASH,
     baseEffect: EFFECT.BALDING,
+    cost: 4,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.ANTI_GRAVITY,
       [EFFECT.CALORIE_DENSE]: EFFECT.SNEAKY,
@@ -189,6 +203,7 @@ const ingredients = {
   [INGREDIENT.PARACETAMOL]: {
     name: INGREDIENT.PARACETAMOL,
     baseEffect: EFFECT.SNEAKY,
+    cost: 3,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.SLIPPERY,
       [EFFECT.ELECTRIFYING]: EFFECT.ATHLETIC,
@@ -205,6 +220,7 @@ const ingredients = {
   [INGREDIENT.VIAGRA]: {
     name: INGREDIENT.VIAGRA,
     baseEffect: EFFECT.TROPIC_THUNDER,
+    cost: 4,
     replacesEffects: {
       [EFFECT.ATHLETIC]: EFFECT.SNEAKY,
       [EFFECT.DISORIENTING]: EFFECT.TOXIC,

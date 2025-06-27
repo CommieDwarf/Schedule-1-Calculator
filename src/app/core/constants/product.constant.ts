@@ -2,7 +2,8 @@ import { BASE_PRODUCT, BaseProduct } from '@core/models/Product.model';
 import { RANK } from '@core/models/rank.model';
 import { EFFECT } from '@core/models/effect.model';
 
-export const BASE_PRODUCTS = {
+// Partial un till rest is implemented
+export const BASE_PRODUCTS: Partial<Record<BASE_PRODUCT, BaseProduct>> = {
   [BASE_PRODUCT.OG_KUSH]: {
     name: BASE_PRODUCT.OG_KUSH,
     rank: {
@@ -45,6 +46,6 @@ export const BASE_PRODUCTS = {
   },
 };
 
-export const BASE_PRODUCT_MAP = new Map(
+export const BASE_PRODUCT_MAP = new Map<BASE_PRODUCT, BaseProduct>(
   Object.entries(BASE_PRODUCTS) as [BASE_PRODUCT, BaseProduct][],
 );

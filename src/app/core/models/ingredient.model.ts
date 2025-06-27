@@ -23,4 +23,5 @@ export interface Ingredient {
   name: INGREDIENT;
   replacesEffects: Partial<Record<EFFECT, EFFECT>>;
   baseEffect: EFFECT;
+  cost: number;
 }
