@@ -14,8 +14,8 @@ import {
   Renderer2,
   signal,
 } from '@angular/core';
-import { SwipeDirective } from '@shared/directives/swipe.directive';
-import { AxisTrackData } from '@shared/directives/touchTracker';
+import { SwipeDirective } from '@shared/directives/swipe/swipe.directive';
+import { AxisTrackData } from '@shared/directives/swipe/touchTracker';
 
 const DEFAULT_D_THRESHOLD_WIDTH_FACTOR = 0.4;
 const DEFAULT_V_THRESHOLD = 600;

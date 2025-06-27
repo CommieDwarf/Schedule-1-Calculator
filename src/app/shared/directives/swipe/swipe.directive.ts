@@ -7,7 +7,10 @@ import {
   OutputEmitterRef,
   signal,
 } from '@angular/core';
-import { TouchTracker, AxisTrackData } from '@shared/directives/touchTracker';
+import {
+  TouchTracker,
+  AxisTrackData,
+} from '@shared/directives/swipe/touchTracker';
 
 export interface CustomTouchEvent {
   native: TouchEvent;

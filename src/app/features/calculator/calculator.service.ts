@@ -96,22 +96,22 @@ export class CalculatorService {
       ...baseProduct.effects.map((effect) => this.getEffect(effect)),
     ]);
     ingredients.forEach((ingredient) => {
-      const effectsToReplace: Effect[] = [];
-      effects.forEach((effect) => {
-        if (effect.name in ingredient.replacesEffects) {
-          effectsToReplace.push(effect);
-        }
-      });
-      effectsToReplace.forEach((effect) => {
-        effects.delete(effect);
-        effects.add(
-          this.getEffect(ingredient.replacesEffects[effect.name] as EFFECT),
-        );
-      });
-      effects.add(this.getEffect(ingredient.baseEffect));
+      effects = this.replaceEffects(effects, ingredient);
     });
 
     return effects;
+  }
+
+  private replaceEffects(effects: Set<Effect>, ingredient: Ingredient) {
+    const newEffects = new Set<Effect>();
+
+    for (const effect of effects) {
+      const replacement = ingredient.replacesEffects[effect.name as EFFECT];
+      newEffects.add(replacement ? this.getEffect(replacement) : effect);
+    }
+
+    newEffects.add(this.getEffect(ingredient.baseEffect));
+    return newEffects;
   }
 
   private getEffect(effect: EFFECT) {
