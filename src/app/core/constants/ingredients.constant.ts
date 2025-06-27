@@ -1,7 +1,8 @@
 import { EFFECT } from '@core/models/effect.model';
 import { Ingredient, INGREDIENT } from '@core/models/ingredient.model';
+import { InjectionToken } from '@angular/core';
 
-const ingredients: Record<INGREDIENT, Ingredient> = {
+const INGREDIENT_RECORD: Record<INGREDIENT, Ingredient> = {
   [INGREDIENT.ADDY]: {
     name: INGREDIENT.ADDY,
     baseEffect: EFFECT.THOUGHT_PROVOKING,
@@ -231,6 +232,15 @@ const ingredients: Record<INGREDIENT, Ingredient> = {
   },
 };
 
-export const INGREDIENT_MAP = new Map<INGREDIENT, Ingredient>(
-  Object.entries(ingredients) as [INGREDIENT, Ingredient][],
+const INGREDIENTS_MAP = new Map<INGREDIENT, Ingredient>(
+  Object.entries(INGREDIENT_RECORD) as [INGREDIENT, Ingredient][],
 );
+
+export const INGREDIENTS_MAP_TOKEN = new InjectionToken<
+  Map<INGREDIENT, Ingredient>
+>('Ingredients constants');
+
+export const INGREDIENTS_MAP_PROVIDER = {
+  provide: INGREDIENTS_MAP_TOKEN,
+  useValue: INGREDIENTS_MAP,
+};

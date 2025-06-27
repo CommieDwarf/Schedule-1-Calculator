@@ -1,9 +1,11 @@
 import { BASE_PRODUCT, BaseProduct } from '@core/models/Product.model';
 import { RANK } from '@core/models/rank.model';
 import { EFFECT } from '@core/models/effect.model';
+import { InjectionToken } from '@angular/core';
+import { Ingredient, INGREDIENT } from '@core/models/ingredient.model';
 
 // Partial un till rest is implemented
-export const BASE_PRODUCTS: Partial<Record<BASE_PRODUCT, BaseProduct>> = {
+const BASE_PRODUCT_RECORD: Partial<Record<BASE_PRODUCT, BaseProduct>> = {
   [BASE_PRODUCT.OG_KUSH]: {
     name: BASE_PRODUCT.OG_KUSH,
     rank: {
@@ -46,6 +48,14 @@ export const BASE_PRODUCTS: Partial<Record<BASE_PRODUCT, BaseProduct>> = {
   },
 };
 
-export const BASE_PRODUCT_MAP = new Map<BASE_PRODUCT, BaseProduct>(
-  Object.entries(BASE_PRODUCTS) as [BASE_PRODUCT, BaseProduct][],
+export const BASE_PRODUCTS_MAP = new Map<BASE_PRODUCT, BaseProduct>(
+  Object.entries(BASE_PRODUCT_RECORD) as [BASE_PRODUCT, BaseProduct][],
 );
+export const BASE_PRODUCTS_MAP_TOKEN = new InjectionToken<
+  Map<BASE_PRODUCT, BaseProduct>
+>('Base products constants');
+
+export const BASE_PRODUCT_MAP_PROVIDER = {
+  provide: BASE_PRODUCTS_MAP_TOKEN,
+  useValue: BASE_PRODUCTS_MAP,
+};

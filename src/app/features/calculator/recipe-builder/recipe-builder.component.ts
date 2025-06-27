@@ -5,7 +5,9 @@ import { CalculatorService } from '@features/calculator/calculator.service';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Ingredient as IngredientModel } from '@core/models/ingredient.model';
 import { BASE_PRODUCT } from '@core/models/Product.model';
-import { INGREDIENT_MAP } from '@core/constants/ingredients.constant';
+import { INGREDIENTS_MAP_TOKEN } from '@core/constants/ingredients.constant';
+
+interface OnInit {}
 
 @Component({
   selector: 'app-recipe-builder',
@@ -13,9 +15,12 @@ import { INGREDIENT_MAP } from '@core/constants/ingredients.constant';
   templateUrl: './recipe-builder.component.html',
   styleUrl: './recipe-builder.component.scss',
 })
-export class RecipeBuilderComponent {
+export class RecipeBuilderComponent implements OnInit {
   private readonly calculatorService = inject(CalculatorService);
-  protected readonly sourceIngredients = Array.from(INGREDIENT_MAP.values());
+  private readonly INGREDIENTS_MAP = inject(INGREDIENTS_MAP_TOKEN);
+  protected readonly sourceIngredients = Array.from(
+    this.INGREDIENTS_MAP.values(),
+  );
   protected readonly mixedIngredients = this.calculatorService.ingredientList;
   protected readonly sourceDragDisabled = signal(false);
 
@@ -25,6 +30,22 @@ export class RecipeBuilderComponent {
     MAX_INGREDIENTS_IN_MIX_AMOUNT;
 
   constructor() {}
+
+  ngOnInit() {
+    console.log('ingredients map');
+    console.log(this.INGREDIENTS_MAP);
+    console.log(' ');
+    console.log(this.sourceIngredients);
+  }
+
+  protected setBaseProduct(event: Event) {
+    const target = event.currentTarget as HTMLInputElement;
+    if (!target) {
+      return;
+    }
+    const value = target.value as BASE_PRODUCT;
+    this.calculatorService.setProduct(value);
+  }
 
   protected disableSourceDrag() {
     this.sourceDragDisabled.set(true);

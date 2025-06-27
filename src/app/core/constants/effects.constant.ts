@@ -1,6 +1,7 @@
 import { EFFECT, Effect } from '@core/models/effect.model';
+import { InjectionToken } from '@angular/core';
 
-export const EFFECTS: Record<EFFECT, Effect> = {
+const EFFECT_RECORD: Record<EFFECT, Effect> = {
   [EFFECT.ANTI_GRAVITY]: {
     name: EFFECT.ANTI_GRAVITY,
     multiplier: 0.54,
@@ -173,6 +174,14 @@ export const EFFECTS: Record<EFFECT, Effect> = {
   },
 };
 
-export const EFFECT_MAP = new Map<EFFECT, Effect>(
-  Object.entries(EFFECTS) as [EFFECT, Effect][],
+const EFFECTS_MAP = new Map<EFFECT, Effect>(
+  Object.entries(EFFECT_RECORD) as [EFFECT, Effect][],
 );
+export const EFFECTS_MAP_TOKEN = new InjectionToken<Map<EFFECT, Effect>>(
+  'Ingredients constants',
+);
+
+export const EFFECT_MAP_PROVIDER = {
+  provide: EFFECTS_MAP_TOKEN,
+  useValue: EFFECTS_MAP,
+};
