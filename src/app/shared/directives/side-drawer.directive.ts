@@ -129,11 +129,6 @@ export class SideDrawerDirective implements OnInit {
       }),
       closeSwipe.subscribe((event) => {
         this.handleCloseSwipe(event.trackData);
-        // alert('directional distance: ' + event.trackData.distance);
-      }),
-      swipe.swiped.subscribe((event) => {
-        // alert(`diagonal distance: ${event.trackData.diagonal.distance}`);
-        alert(`angle: ${event.angle}`);
       }),
     ];
   }

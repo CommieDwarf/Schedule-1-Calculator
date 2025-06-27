@@ -2,9 +2,10 @@ import { Component, inject, signal } from '@angular/core';
 import { IngredientList } from '@features/calculator/ingredient-list/ingredient-list.component';
 import { MAX_INGREDIENTS_IN_MIX_AMOUNT } from '@core/constants/game.constants';
 import { CalculatorService } from '@features/calculator/calculator.service';
-import { INGREDIENTS_TOKEN } from '@core/constants/ingredients.token';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Ingredient as IngredientModel } from '@core/models/ingredient.model';
+import { BASE_PRODUCT } from '@core/models/Product.model';
+import { INGREDIENT_MAP } from '@core/constants/ingredients.constant';
 
 @Component({
   selector: 'app-recipe-builder',
@@ -14,9 +15,11 @@ import { Ingredient as IngredientModel } from '@core/models/ingredient.model';
 })
 export class RecipeBuilderComponent {
   private readonly calculatorService = inject(CalculatorService);
-  protected readonly sourceIngredients = inject(INGREDIENTS_TOKEN);
+  protected readonly sourceIngredients = Array.from(INGREDIENT_MAP.values());
   protected readonly mixedIngredients = this.calculatorService.ingredientList;
   protected readonly sourceDragDisabled = signal(false);
+
+  protected readonly BASE_PRODUCT = BASE_PRODUCT;
 
   protected readonly MAX_INGREDIENTS_IN_MIX_AMOUNT =
     MAX_INGREDIENTS_IN_MIX_AMOUNT;

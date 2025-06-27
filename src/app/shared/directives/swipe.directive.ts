@@ -28,7 +28,6 @@ export interface TrackData {
 
 interface BaseSwipeEvent {
   native: TouchEvent;
-  angle: number;
   source: {
     velocity: boolean;
     distance: boolean;
@@ -37,6 +36,7 @@ interface BaseSwipeEvent {
 
 export interface SwipeEvent extends BaseSwipeEvent {
   trackData: TrackData;
+  angle: number;
 }
 
 export interface DirectionalSwipeEvent extends BaseSwipeEvent {
@@ -192,13 +192,11 @@ export class SwipeDirective {
 
   private detectDirection({
     axisTrackData,
-    angle,
     emitNegative,
     emitPositive,
     event,
   }: {
     axisTrackData: AxisTrackData;
-    angle: number;
     emitNegative: OutputEmitterRef<DirectionalSwipeEvent>;
     emitPositive: OutputEmitterRef<DirectionalSwipeEvent>;
     event: TouchEvent;
@@ -213,7 +211,6 @@ export class SwipeDirective {
     const swipeEvent: DirectionalSwipeEvent = {
       native: event,
       trackData: axisTrackData,
-      angle,
       source: {
         velocity: fromVelocity,
         distance: fromDistance,

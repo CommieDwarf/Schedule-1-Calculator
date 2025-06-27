@@ -1,6 +1,20 @@
 .container {
   margin: auto;
+}
+
+.ingredient-lists {
   display: flex;
   justify-content: center;
   column-gap: 10px;
+}
+
+.product-select {
+  width: 180px;
+}
+
+.product-select-wrapper {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }

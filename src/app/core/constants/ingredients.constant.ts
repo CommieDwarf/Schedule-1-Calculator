@@ -1,9 +1,10 @@
 import { EFFECT } from '@core/models/effect.model';
 import { Ingredient, INGREDIENT } from '@core/models/ingredient.model';
 
-export const INGREDIENTS: Ingredient[] = [
-  {
+const ingredients = {
+  [INGREDIENT.ADDY]: {
     name: INGREDIENT.ADDY,
+    baseEffect: EFFECT.THOUGHT_PROVOKING,
     replacesEffects: {
       [EFFECT.EXPLOSIVE]: EFFECT.EUPHORIC,
       [EFFECT.FOGGY]: EFFECT.ENERGIZING,
@@ -12,8 +13,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.SEDATING]: EFFECT.GINGERITIS,
     },
   },
-  {
+  [INGREDIENT.BANANA]: {
     name: INGREDIENT.BANANA,
+    baseEffect: EFFECT.GINGERITIS,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.SNEAKY,
       [EFFECT.CYCLOPEAN]: EFFECT.ENERGIZING,
@@ -26,8 +28,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.TOXIC]: EFFECT.SMELLY,
     },
   },
-  {
+  [INGREDIENT.BATTERY]: {
     name: INGREDIENT.BATTERY,
+    baseEffect: EFFECT.BRIGHT_EYED,
     replacesEffects: {
       [EFFECT.CYCLOPEAN]: EFFECT.GLOWING,
       [EFFECT.ELECTRIFYING]: EFFECT.EUPHORIC,
@@ -37,8 +40,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.SHRINKING]: EFFECT.MUNCHIES,
     },
   },
-  {
+  [INGREDIENT.CHILI]: {
     name: INGREDIENT.CHILI,
+    baseEffect: EFFECT.SPICY,
     replacesEffects: {
       [EFFECT.ANTI_GRAVITY]: EFFECT.TROPIC_THUNDER,
       [EFFECT.ATHLETIC]: EFFECT.EUPHORIC,
@@ -49,8 +53,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.THOUGHT_PROVOKING]: EFFECT.FOCUSED,
     },
   },
-  {
+  [INGREDIENT.CUKE]: {
     name: INGREDIENT.CUKE,
+    baseEffect: EFFECT.ENERGIZING,
     replacesEffects: {
       [EFFECT.EUPHORIC]: EFFECT.LAXATIVE,
       [EFFECT.FOGGY]: EFFECT.CYCLOPEAN,
@@ -61,8 +66,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.TOXIC]: EFFECT.EUPHORIC,
     },
   },
-  {
+  [INGREDIENT.DONUT]: {
     name: INGREDIENT.DONUT,
+    baseEffect: EFFECT.CALORIE_DENSE,
     replacesEffects: {
       [EFFECT.ANTI_GRAVITY]: EFFECT.SLIPPERY,
       [EFFECT.BALDING]: EFFECT.SNEAKY,
@@ -73,8 +79,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.SHRINKING]: EFFECT.ENERGIZING,
     },
   },
-  {
+  [INGREDIENT.ENERGY_DRINK]: {
     name: INGREDIENT.ENERGY_DRINK,
+    baseEffect: EFFECT.ATHLETIC,
     replacesEffects: {
       [EFFECT.DISORIENTING]: EFFECT.ELECTRIFYING,
       [EFFECT.EUPHORIC]: EFFECT.ENERGIZING,
@@ -87,8 +94,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.TROPIC_THUNDER]: EFFECT.SNEAKY,
     },
   },
-  {
+  [INGREDIENT.FLU_MEDICINE]: {
     name: INGREDIENT.FLU_MEDICINE,
+    baseEffect: EFFECT.SEDATING,
     replacesEffects: {
       [EFFECT.ATHLETIC]: EFFECT.MUNCHIES,
       [EFFECT.CALMING]: EFFECT.BRIGHT_EYED,
@@ -102,8 +110,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.THOUGHT_PROVOKING]: EFFECT.GINGERITIS,
     },
   },
-  {
+  [INGREDIENT.GASOLINE]: {
     name: INGREDIENT.GASOLINE,
+    baseEffect: EFFECT.TOXIC,
     replacesEffects: {
       [EFFECT.DISORIENTING]: EFFECT.GLOWING,
       [EFFECT.ELECTRIFYING]: EFFECT.DISORIENTING,
@@ -118,8 +127,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.SNEAKY]: EFFECT.TROPIC_THUNDER,
     },
   },
-  {
+  [INGREDIENT.HORSE_SEMEN]: {
     name: INGREDIENT.HORSE_SEMEN,
+    baseEffect: EFFECT.LONG_FACED,
     replacesEffects: {
       [EFFECT.ANTI_GRAVITY]: EFFECT.CALMING,
       [EFFECT.GINGERITIS]: EFFECT.REFRESHING,
@@ -127,8 +137,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.THOUGHT_PROVOKING]: EFFECT.ELECTRIFYING,
     },
   },
-  {
+  [INGREDIENT.IODINE]: {
     name: INGREDIENT.IODINE,
+    baseEffect: EFFECT.JENNERISING,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.BALDING,
       [EFFECT.CALORIE_DENSE]: EFFECT.GINGERITIS,
@@ -138,8 +149,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.TOXIC]: EFFECT.SNEAKY,
     },
   },
-  {
+  [INGREDIENT.MEGA_BEAN]: {
     name: INGREDIENT.MEGA_BEAN,
+    baseEffect: EFFECT.FOGGY,
     replacesEffects: {
       [EFFECT.ATHLETIC]: EFFECT.LAXATIVE,
       [EFFECT.CALMING]: EFFECT.GLOWING,
@@ -153,8 +165,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.THOUGHT_PROVOKING]: EFFECT.ENERGIZING,
     },
   },
-  {
+  [INGREDIENT.MOTOR_OIL]: {
     name: INGREDIENT.MOTOR_OIL,
+    baseEffect: EFFECT.SLIPPERY,
     replacesEffects: {
       [EFFECT.ENERGIZING]: EFFECT.MUNCHIES,
       [EFFECT.EUPHORIC]: EFFECT.SEDATING,
@@ -163,8 +176,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.PARANOIA]: EFFECT.ANTI_GRAVITY,
     },
   },
-  {
+  [INGREDIENT.MOUTH_WASH]: {
     name: INGREDIENT.MOUTH_WASH,
+    baseEffect: EFFECT.BALDING,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.ANTI_GRAVITY,
       [EFFECT.CALORIE_DENSE]: EFFECT.SNEAKY,
@@ -172,8 +186,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.FOCUSED]: EFFECT.JENNERISING,
     },
   },
-  {
+  [INGREDIENT.PARACETAMOL]: {
     name: INGREDIENT.PARACETAMOL,
+    baseEffect: EFFECT.SNEAKY,
     replacesEffects: {
       [EFFECT.CALMING]: EFFECT.SLIPPERY,
       [EFFECT.ELECTRIFYING]: EFFECT.ATHLETIC,
@@ -187,8 +202,9 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.TOXIC]: EFFECT.TROPIC_THUNDER,
     },
   },
-  {
+  [INGREDIENT.VIAGRA]: {
     name: INGREDIENT.VIAGRA,
+    baseEffect: EFFECT.TROPIC_THUNDER,
     replacesEffects: {
       [EFFECT.ATHLETIC]: EFFECT.SNEAKY,
       [EFFECT.DISORIENTING]: EFFECT.TOXIC,
@@ -197,4 +213,8 @@ export const INGREDIENTS: Ingredient[] = [
       [EFFECT.SHRINKING]: EFFECT.GINGERITIS,
     },
   },
-];
+};
+
+export const INGREDIENT_MAP = new Map<INGREDIENT, Ingredient>(
+  Object.entries(ingredients) as [INGREDIENT, Ingredient][],
+);

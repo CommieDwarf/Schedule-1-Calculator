@@ -1,3 +1,17 @@
 <div class="container">
   <app-recipe-builder/>
+  <div class="result">
+    <div class="effects">
+      Effects:
+      @for (effect of effects(); track effect.name) {
+        <span [style.color]="effect.color">{{effect.name}}</span>, {{" "}}
+      }
+    </div>
+    <div class="cost">
+      Cost: $15
+    </div>
+    <div class="sell">
+      Sell: {{sellPrice()}}
+    </div>
+  </div>
 </div>

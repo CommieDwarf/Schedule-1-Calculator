@@ -1,20 +1,30 @@
-
 <div class="container">
-  <app-ingredient-list
-    listId="ingredients"
-    connectedTo="mix-list"
-    [ingredients]="sourceIngredients"
-    (drop)="removeFromCurrentMix($event)"
-    [sortingDisabled]="true"
-    [dropDisabled]="sourceDragDisabled()"
-  />
-  <app-ingredient-list
-    listId="mix-list"
-    connectedTo="ingredients"
-    [ingredients]="mixedIngredients()"
-    (drop)="onIngredientDrop($event)"
-    (dragStarted)="disableSourceDrag()"
-    (dragEnded)="enableSourceDrag()"
-    [dropDisabled]="mixedIngredients().length === MAX_INGREDIENTS_IN_MIX_AMOUNT"
-  />
+  <div class="product-select-wrapper">
+    <select class="product-select">
+      <option>{{BASE_PRODUCT.OG_KUSH}}</option>
+      <option></option>
+      <option></option>
+    </select>
+  </div>
+  <div class="ingredient-lists">
+    <app-ingredient-list
+      listId="ingredients"
+      connectedTo="mix-list"
+      [ingredients]="sourceIngredients"
+      (drop)="removeFromCurrentMix($event)"
+      [sortingDisabled]="true"
+      [dropDisabled]="sourceDragDisabled()"
+    />
+    <app-ingredient-list
+      listId="mix-list"
+      connectedTo="ingredients"
+      [ingredients]="mixedIngredients()"
+      (drop)="onIngredientDrop($event)"
+      (dragStarted)="disableSourceDrag()"
+      (dragEnded)="enableSourceDrag()"
+      [dropDisabled]="
+        mixedIngredients().length === MAX_INGREDIENTS_IN_MIX_AMOUNT
+      "
+    />
+  </div>
 </div>

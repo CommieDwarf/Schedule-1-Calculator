@@ -1,12 +1,11 @@
-@use "mixins";
-@use "colors";
+@use 'abstracts';
 
 .container {
   height: 75px;
   width: 100%;
   position: fixed;
   color: white;
-  background-color: #0c150c;
+  background-color: abstracts.$primary;
   padding-left: 40px;
   padding-right: 40px;
   column-gap: 20px;
@@ -55,12 +54,12 @@ a {
 }
 
 a:hover {
-  color: #df7b2b;
+  color: abstracts.$secondary;
   filter: brightness(150%);
 }
 
 .active-link {
-  color: #df7b2b;
+  color: abstracts.$secondary;
 }
 
 .mobile-menu-button {
@@ -70,7 +69,7 @@ a:hover {
   height: 40px;
   justify-content: center;
   align-items: center;
-  color: #df7b2b;
+  color: abstracts.$secondary;
 }
 
 .mobile-menu-button--toggled {

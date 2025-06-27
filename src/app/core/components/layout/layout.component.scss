@@ -3,5 +3,14 @@ main {
   background-color: rgba(37, 37, 37, 0.5);
   border-radius: 10px;
   width: fit-content;
-  margin: auto;
+  margin: 10px auto auto;
 }
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+    box-sizing: border-box;
+
+  }
+}
+

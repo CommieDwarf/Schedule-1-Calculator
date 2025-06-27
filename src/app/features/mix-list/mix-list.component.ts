@@ -6,10 +6,8 @@ import { MixComponent } from './mix/mix.component';
   selector: 'app-mix-list',
   imports: [MixComponent],
   templateUrl: './mix-list.component.html',
-  styleUrl: './mix-list.component.scss'
+  styleUrl: './mix-list.component.scss',
 })
 export class MixListComponent {
-
   mixes: Mix[] = DUMMY_MIXES;
-
 }
