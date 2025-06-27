@@ -7,6 +7,7 @@ import { Component, computed, input } from '@angular/core';
 })
 export class Ingredient {
   readonly name = input.required<string>();
+  readonly redColor = input(false);
 
   protected readonly imgFilePath = computed(() => {
     const imgName = this.name().replace(' ', '_');

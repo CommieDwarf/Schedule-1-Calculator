@@ -31,13 +31,6 @@ export class RecipeBuilderComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log('ingredients map');
-    console.log(this.INGREDIENTS_MAP);
-    console.log(' ');
-    console.log(this.sourceIngredients);
-  }
-
   protected setBaseProduct(event: Event) {
     const target = event.currentTarget as HTMLInputElement;
     if (!target) {

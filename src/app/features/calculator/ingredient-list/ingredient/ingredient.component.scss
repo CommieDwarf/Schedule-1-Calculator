@@ -1,5 +1,4 @@
 
-
 .container {
     width: 120px;
     height: 32px;
@@ -16,7 +15,13 @@
     box-sizing: border-box;
 }
 
+.container--red {
+  background-color: #8b2e2e !important;
+  border: 1px solid #3d1a1a !important;
+}
+
 .img {
     height: 100%;
     aspect-ratio: 1;
 }
+

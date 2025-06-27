@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [class.container--red]="redColor()" >
     <img class="img prevent-select" [src]="imgFilePath()" [alt]="name()">
     <span class="name prevent-select">{{name()}}</span>
 </div>

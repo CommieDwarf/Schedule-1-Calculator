@@ -1,20 +1,31 @@
-<div class="container">
-  <ul cdkDropList
-      [id]="listId()"
-      [cdkDropListConnectedTo]="connectedTo()"
-      (cdkDropListDropped)="emitDrop($event)"
-      [cdkDropListData]="ingredients()"
-      [cdkDropListSortingDisabled]="sortingDisabled()"
-      [cdkDropListEnterPredicate]="enterPredicate.bind(this)"
+<div class="container" #container>
+  <ul
+    cdkDropList
+    [id]="listId()"
+    [cdkDropListConnectedTo]="connectedTo()"
+    (cdkDropListDropped)="emitDrop($event)"
+    [cdkDropListData]="ingredients()"
+    [cdkDropListSortingDisabled]="sortingDisabled()"
+    [cdkDropListEnterPredicate]="enterPredicate.bind(this)"
   >
     @for (ingredient of ingredients(); track ingredient) {
-      <li cdkDrag
-          (cdkDragStarted)="onDragStarted($event)"
-          (cdkDragEnded)="onDragEnded($event)"
-          (cdkDragEntered)="emitDragEntered($event)"
-          [cdkDragData]="ingredient"
+      <li
+        cdkDrag
+        (cdkDragStarted)="onDragStarted($event)"
+        (cdkDragEnded)="onDragEnded($event)"
+        (cdkDragEntered)="emitDragEntered($event)"
+        (cdkDragMoved)="checkBoundary($event)"
+        [cdkDragData]="ingredient"
       >
-        <app-ingredient [name]="ingredient.name"/>
+        <app-ingredient [name]="ingredient.name" />
+        <div
+          *cdkDragPreview
+          class="drag-preview"
+        >
+          <app-ingredient [name]="ingredient.name"
+                          [redColor]="dragOutOfContainer() &&
+                          changeRedOnExit()"/>
+        </div>
       </li>
     }
   </ul>
