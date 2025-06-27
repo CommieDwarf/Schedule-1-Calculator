@@ -1,14 +1,17 @@
-<app-header
-  #header
-  (toggleMobileMenu)="toggleMobileMenu()"
-  [isMobileMenuOpen]="isMobileMenuOpen()"
-/>
-<!--spacer-->
-<div [style.height.px]="header.height()"></div>
+<div class="container">
+  <app-header
+    #header
+    (toggleMobileMenu)="toggleMobileMenu()"
+    [isMobileMenuOpen]="isMobileMenuOpen()"
+  />
+<!--  spacer-->
+  <div [style.height.px]="header.height()"></div>
 
-<app-mobile-menu
-  [(isOpen)]="isMobileMenuOpen"
-/>
-<main>
-  <router-outlet></router-outlet>
-</main>
+  <app-mobile-menu
+    [(isOpen)]="isMobileMenuOpen"
+  />
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+

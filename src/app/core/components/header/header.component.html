@@ -1,12 +1,7 @@
 <div class="container" #container>
-  <nav class="leftNav">
-    <ul>
-      <li>
-        <a routerLink="/mix" routerLinkActive="active-link">Calculator</a>
-      </li>
-      <li>Recipes</li>
-    </ul>
-  </nav>
+    <div class="nav-wrapper">
+      <app-navigation/>
+    </div>
   <div
     [class.mobile-menu-button]="true"
     [class.mobile-menu-button--toggled]="isMobileMenuOpen()"
@@ -16,14 +11,7 @@
   </div>
   <img src="img/Site-logo.png" alt="Schedule 1 Calculator" class="logo" />
   <div class="mobile-header-spacer"></div>
-  <nav class="rightNav">
-    <ul>
-      <li>
-        <a routerLink="/log-in" routerLinkActive="active-link">Log in</a>
-      </li>
-      <li>
-        <a routerLink="/register" routerLinkActive="active-link">Sign Up</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="auth">
+<!-- here will be avatar & auth toggle-->
+  </div>
 </div>

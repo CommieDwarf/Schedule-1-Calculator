@@ -16,6 +16,7 @@ export class CalculatorService {
   public readonly baseProduct = signal<BaseProduct | undefined>(undefined);
   public readonly effects = signal<Effect[]>([]);
   public readonly sellPrice = signal<number>(0);
+  public readonly cost = signal<number>(0);
 
   private readonly INGREDIENTS_MAP = INGREDIENT_MAP;
   private readonly EFFECT_MAP = EFFECT_MAP;
@@ -78,9 +79,14 @@ export class CalculatorService {
       Array.from(this.calcEffects(baseProduct, this.ingredientList())),
     );
     this.sellPrice.set(this.calcPrice(baseProduct, this.effects()));
+    this.cost.set(this.calcCost(this.ingredientList()));
   }
 
-  private calcCost(ingredients: Ingredient[]) {}
+  private calcCost(ingredients: Ingredient[]) {
+    return ingredients
+      .map((ingredients) => ingredients.cost)
+      .reduce((totalCost, cost) => totalCost + cost);
+  }
 
   private calcPrice(baseProduct: BaseProduct, effects: Effect[]): number {
     const totalMultiplier = effects

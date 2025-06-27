@@ -7,11 +7,11 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationComponent } from '@core/components/navigation/navigation.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [NavigationComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

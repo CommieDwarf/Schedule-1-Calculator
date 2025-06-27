@@ -25,4 +25,8 @@ export class CalculatorComponent {
   get effects(): Signal<Effect[]> {
     return this.calcService.effects;
   }
+
+  get cost(): Signal<number> {
+    return this.calcService.cost;
+  }
 }

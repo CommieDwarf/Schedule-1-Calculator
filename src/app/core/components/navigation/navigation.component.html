@@ -2,9 +2,10 @@
   [ngClass]="{
     container: true,
     'container--vertical': orientation() === 'vertical',
+    'container--horizontal': orientation() !== 'vertical',
   }"
 >
-  <ul>
+  <ul class="">
     <li>
       <a routerLink="/mix" routerLinkActive="active-link">Calculator</a>
     </li>
