@@ -1,15 +1,17 @@
 @use "colors";
 
+
+//TODO: do przerobienia
 .form {
   width: 300px;
   // background-color: colors.$on-primary-dark-accent;
-  color: colors.$on-primary-dark-accent;
-  background: linear-gradient(
-    -45deg,
-    colors.$primary-dark,
-    75%,
-    colors.$primary 99%
-  );
+  //color: colors.$on-primary-dark-accent;
+  //background: linear-gradient(
+  //  -45deg,
+  //  colors.$primary-dark,
+  //  75%,
+  //  colors.$primary 99%
+  //);
   padding: 10px 10px 25px;
   border-radius: 5px;
   margin: auto;
@@ -32,12 +34,12 @@ h2 {
 }
 
 hr {
-  border-bottom: 1px solid colors.$on-primary-dark-accent;
+  //border-bottom: 1px solid colors.$on-primary-dark-accent;
   width: 100%;
 }
 
 :host ::ng-deep .error {
   height: 20px;
-  color: colors.$error-on-primary-dark;
+  //color: colors.$error-on-primary-dark;
   font-size: 0.8em;
 }
