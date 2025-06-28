@@ -6,10 +6,8 @@
   display: flex;
   justify-content: center;
   column-gap: 10px;
+  container-type: inline-size;
 }
-
-
-
 .product-select-wrapper {
   height: 50px;
   display: flex;
@@ -28,6 +26,6 @@
 
 @media (max-width: 600px) {
   .product-select, .spacer {
-    width: 160px;
+    width: 40cwq;
   }
 }

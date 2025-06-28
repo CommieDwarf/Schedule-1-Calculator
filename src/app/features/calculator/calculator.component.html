@@ -1,21 +1,25 @@
 <div class="container">
-  <div class="description">
+  <header class="header">
     <h1>Calculator</h1>
-    <p>Drag and drop an ingredient into the list to create a recipe.</p>
-  </div>
-  <app-recipe-builder/>
-  <div class="result">
+    <p class="description">
+      Drag and drop an ingredient into the list to create a recipe.
+    </p>
+  </header>
+  <section class="semantic-wrapper" aria-label="recipe builder">
+    <app-recipe-builder />
+  </section>
+  <section aria-label="Calculator result" class="result">
     <div class="effects">
-      Effects:
-      @for (effect of effects(); track effect.name) {
-        <span [style.color]="effect.color">{{effect.name}}</span>, {{" "}}
-      }
+      <strong class="effect-label">Effects: </strong>
+      <ul class="effect-list" role="list">
+        @for (effect of effects(); track effect.name) {
+          <li [style.color]="effect.color" class="effect" role="listitem">
+            {{ effect.name }}<span class="separator">{{ !$last ? ",&nbsp;" : "." }}</span>
+          </li>
+        }
+      </ul>
     </div>
-    <div class="cost">
-      Cost: ${{cost()}}
-    </div>
-    <div class="sell">
-      Sell: ${{sellPrice()}}
-    </div>
-  </div>
+    <p><strong>Cost:</strong> ${{ cost() }}</p>
+    <p><strong>Sell:</strong> ${{ sellPrice() }}</p>
+  </section>
 </div>
