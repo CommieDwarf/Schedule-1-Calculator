@@ -2,20 +2,32 @@
   margin: auto;
 }
 
-.ingredient-lists {
+.ingredient-lists, .product-select-wrapper {
   display: flex;
   justify-content: center;
   column-gap: 10px;
 }
 
-.product-select {
-  width: 180px;
-}
+
 
 .product-select-wrapper {
   height: 50px;
   display: flex;
-  justify-content: flex-end;
-  padding: 0 20px 0 20px;
   margin-bottom: 10px;
+}
+
+
+.product-select, .spacer {
+  width: 180px;
+}
+
+.spacer {
+  visibility: hidden;
+}
+
+
+@media (max-width: 600px) {
+  .product-select, .spacer {
+    width: 160px;
+  }
 }
